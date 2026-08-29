@@ -31,7 +31,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 # ─── Paths ────────────────────────────────────────────────────────────
-WORKSPACE = os.path.expanduser("~/.openclaw/workspace")
+WORKSPACE = os.environ.get('DSH_WORKSPACE') or os.environ.get('OPENCLAW_WORKSPACE') or os.path.expanduser("~/.openclaw/workspace")
 FRUIT_POOL_PATH = os.path.join(WORKSPACE, "memory", "fruit-pool.json")
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
